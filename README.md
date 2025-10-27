@@ -10,44 +10,17 @@ A Python utility for cleaning up filenames by consolidating multiple consecutive
   - [Examples](#examples)
   - [What Gets Preserved](#what-gets-preserved)
 - [Features](#features)
+- [Use Cases](#use-cases)
 - [Requirements](#requirements)
 - [Installation](#installation)
 - [Usage](#usage)
-  - [Display Version](#display-version)
-  - [Basic Usage](#basic-usage)
-  - [Recursive Mode](#recursive-mode)
-  - [Dry-Run Mode](#dry-run-mode)
-  - [Extension Filtering](#extension-filtering)
-  - [Combined Options](#combined-options)
-  - [Multiple Directories](#multiple-directories)
 - [Command-Line Options](#command-line-options)
 - [Extension Filtering Logic](#extension-filtering-logic)
 - [Safety Features](#safety-features)
 - [Testing](#testing)
-  - [Running Tests](#running-tests)
 - [Test Coverage](#test-coverage)
-  - [TestSqueezeRulesFunction (14 tests)](#testsqueezerulesfunction-14-tests)
-  - [TestBasicSqueezing (12 tests)](#testbasicsqueezing-12-tests)
-  - [TestDirectorySqueezing (6 tests)](#testdirectorysqueezing-6-tests)
-  - [TestDryRunMode (2 tests)](#testdryrunmode-2-tests)
-  - [TestRecursiveOperation (6 tests)](#testrecursiveoperation-6-tests)
-  - [TestExtensionFiltering (9 tests)](#testextensionfiltering-9-tests)
-  - [TestEdgeCases (9 tests)](#testedgecases-9-tests)
-  - [TestComplexScenarios (4 tests)](#testcomplexscenarios-4-tests)
 - [Key Test Examples](#key-test-examples)
-  - [Spaces to Underscores](#spaces-to-underscores)
-  - [Dots Preserved and Squeezed](#dots-preserved-and-squeezed)
-  - [Hyphens Preserved and Squeezed](#hyphens-preserved-and-squeezed)
-  - [Underscores Preserved and Squeezed](#underscores-preserved-and-squeezed)
-  - [Mixed Separators](#mixed-separators)
-  - [Extension Preservation](#extension-preservation)
-  - [Directory Handling](#directory-handling)
-  - [Conservative Approach Validation](#conservative-approach-validation)
 - [Implementation Details](#implementation-details)
-  - [Architecture](#architecture)
-  - [Algorithm](#algorithm)
-  - [Squeeze Rules Implementation](#squeeze-rules-implementation)
-- [Use Cases](#use-cases)
 - [Acknowledgments](#acknowledgments)
 
 ## Description
@@ -97,6 +70,15 @@ The conservative approach means these filenames remain unchanged:
 - **Hidden file handling** - Automatically skips hidden files (starting with '.')
 - **Extension preservation** - File extensions are never modified
 - **Directory support** - Works on both files and directories
+
+
+## Use Cases
+
+- **Cleaning up downloaded files** with inconsistent naming
+- **Organizing photo collections** with varied separator usage
+- **Preparing files for web deployment** where spaces cause issues
+- **Standardizing project directories** with mixed naming conventions
+- **Batch processing** legacy file systems with problematic names
 
 ## Requirements
 
@@ -400,14 +382,6 @@ text = re.sub(r"\.{2,}", ".", text)  # Squeeze dots
 text = re.sub(r"-{2,}", "-", text)   # Squeeze hyphens
 text = re.sub(r"_{2,}", "_", text)   # Squeeze underscores
 ```
-
-## Use Cases
-
-- **Cleaning up downloaded files** with inconsistent naming
-- **Organizing photo collections** with varied separator usage
-- **Preparing files for web deployment** where spaces cause issues
-- **Standardizing project directories** with mixed naming conventions
-- **Batch processing** legacy file systems with problematic names
 
 ## Acknowledgments
 
