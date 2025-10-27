@@ -6,9 +6,6 @@ A Python utility for cleaning up filenames by consolidating multiple consecutive
 
 - [Description](#description)
 - [Disclaimer](#disclaimer)
-  - [Squeezing Rules](#squeezing-rules)
-  - [Examples](#examples)
-  - [What Gets Preserved](#what-gets-preserved)
 - [Features](#features)
 - [Use Cases](#use-cases)
 - [Requirements](#requirements)
